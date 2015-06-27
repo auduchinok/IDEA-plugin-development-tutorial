@@ -1,0 +1,61 @@
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Xmx512m -Xms256m -XX:MaxPermSize=250m -ea "-Xbootclasspath/a:/Applications/IntelliJ IDEA 14.app/Contents/lib/boot.jar" -Didea.config.path=/Users/Eugene/Library/Caches/IntelliJIdea14/plugins-sandbox/config -Didea.system.path=/Users/Eugene/Library/Caches/IntelliJIdea14/plugins-sandbox/system -Didea.plugins.path=/Users/Eugene/Library/Caches/IntelliJIdea14/plugins-sandbox/plugins -Didea.smooth.progress=false -Dapple.laf.useScreenMenuBar=true -Didea.launcher.port=7532 "-Didea.launcher.bin.path=/Applications/IntelliJ IDEA 14.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath "/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/tools.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/idea_rt.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/idea.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/bootstrap.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/extensions.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/util.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/openapi.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/trove4j.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/jdom.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/log4j.jar" com.intellij.rt.execution.application.AppMain com.intellij.idea.Main
+/Applications/IntelliJ IDEA 14.app/Contents/bin/idea.properties: 'idea.smooth.progress' already defined
+/Applications/IntelliJ IDEA 14.app/Contents/bin/idea.properties: 'java.endorsed.dirs' already defined
+/Applications/IntelliJ IDEA 14.app/Contents/bin/idea.properties: 'apple.laf.useScreenMenuBar' already defined
+[ 106139]  ERROR - ij.components.ComponentManager - Cyclic component initialization: com.intellij.ide.ui.LafManager [Plugin: com.intellij]
+com.intellij.diagnostic.PluginException: Cyclic component initialization: com.intellij.ide.ui.LafManager [Plugin: com.intellij]
+	at com.intellij.openapi.components.impl.ComponentManagerImpl$ComponentConfigComponentAdapter$1.getComponentInstance(ComponentManagerImpl.java:555)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl$ComponentConfigComponentAdapter.getComponentInstance(ComponentManagerImpl.java:610)
+	at com.intellij.util.pico.DefaultPicoContainer.getLocalInstance(DefaultPicoContainer.java:245)
+	at com.intellij.util.pico.DefaultPicoContainer.getComponentInstance(DefaultPicoContainer.java:211)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl.getComponentFromContainer(ComponentManagerImpl.java:168)
+	at com.intellij.openapi.application.impl.ApplicationImpl.getComponentFromContainer(ApplicationImpl.java:533)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl.getComponent(ComponentManagerImpl.java:199)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl.getComponent(ComponentManagerImpl.java:194)
+	at com.intellij.ide.ui.LafManager.getInstance(LafManager.java:29)
+	at com.intellij.openapi.editor.colors.impl.EditorColorsManagerImpl.setGlobalScheme(EditorColorsManagerImpl.java:237)
+	at com.intellij.ide.ui.laf.darcula.DarculaInstaller.install(DarculaInstaller.java:48)
+	at com.intellij.ide.ui.laf.LafManagerImpl.initComponent(LafManagerImpl.java:222)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl$ComponentConfigComponentAdapter$1.getComponentInstance(ComponentManagerImpl.java:568)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl$ComponentConfigComponentAdapter.getComponentInstance(ComponentManagerImpl.java:610)
+	at com.intellij.util.pico.DefaultPicoContainer.getLocalInstance(DefaultPicoContainer.java:245)
+	at com.intellij.util.pico.DefaultPicoContainer.getComponentInstance(DefaultPicoContainer.java:211)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl.createComponent(ComponentManagerImpl.java:125)
+	at com.intellij.openapi.application.impl.ApplicationImpl.createComponent(ApplicationImpl.java:354)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl.a(ComponentManagerImpl.java:116)
+	at com.intellij.openapi.components.impl.ComponentManagerImpl.init(ComponentManagerImpl.java:87)
+	at com.intellij.openapi.components.impl.stores.ApplicationStoreImpl.load(ApplicationStoreImpl.java:101)
+	at com.intellij.openapi.application.impl.ApplicationImpl.load(ApplicationImpl.java:499)
+	at com.intellij.openapi.application.impl.ApplicationImpl.load(ApplicationImpl.java:481)
+	at com.intellij.idea.IdeaApplication.run(IdeaApplication.java:170)
+	at com.intellij.idea.MainImpl$1$1$1.run(MainImpl.java:62)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:362)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[ 106144]  ERROR - ij.components.ComponentManager - IntelliJ IDEA 14.1.4  Build #IU-141.1532.4
+[ 106145]  ERROR - ij.components.ComponentManager - JDK: 1.6.0_65
+[ 106145]  ERROR - ij.components.ComponentManager - VM: Java HotSpot(TM) 64-Bit Server VM
+[ 106145]  ERROR - ij.components.ComponentManager - Vendor: Apple Inc.
+[ 106145]  ERROR - ij.components.ComponentManager - OS: Mac OS X
+[ 251416]   WARN - .ExternalResourceManagerExImpl - Cannot find standard resource. filename:/META-INF/tapestry_5_3.xsd class=class com.intellij.javaee.ResourceRegistrarImpl, classLoader:null
+[ 254398]   WARN - j.ui.mac.MacMainFrameDecorator - no url bundle present.
+To use platform protocol handler to open external links specify required protocols in the mac app layout section of the build file
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line
+[ 307885]   WARN - om.intellij.util.ProfilingUtil - Profiling agent is not enabled. Add -agentlib:yjpagent to idea.vmoptions if necessary to profile IDEA.
+setWindowMask(): To avoid content dragging, setWindowMask() must be called before the window is realized, or apple.awt.draggableWindowBackground must be set to Boolean.FALSE before the window is realized.  If you really want content dragging, set apple.awt.draggableWindowBackground on the window's root pane to Boolean.TRUE before calling setWindowMask() to hide this message.
+[ 392495]   WARN - j.ui.mac.MacMainFrameDecorator - no url bundle present.
+To use platform protocol handler to open external links specify required protocols in the mac app layout section of the build file
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line
+[ 531793]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated with exit code 0
